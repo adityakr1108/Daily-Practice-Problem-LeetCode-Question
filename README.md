@@ -18,8 +18,7 @@ Problems are organized into folders based on their primary topic:
 - **queue/** - Queue data structure problems
 - **heap/** - Heap/Priority queue problems
 - **graph/** - Graph theory problems
-- **dp/** - Dynamic programming problems (also see dynamic-programming/)
-- **dynamic-programming/** - Dynamic programming problems
+- **dp/** - Dynamic programming problems
 - **backtracking/** - Backtracking algorithm problems
 - **greedy/** - Greedy algorithm problems
 
