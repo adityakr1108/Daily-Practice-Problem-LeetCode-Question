@@ -1,33 +1,30 @@
 class Solution {
     public int numSpecial(int[][] mat) {
-        int count = 0;
-        for(int i = 0;i<mat.length;i++){
-            for(int j = 0;j<mat[0].length;j++){
-                if(mat[i][j] == 1 && checkRow(i,j,mat) && checkColumn(i,j,mat)){
-                    count++;
-                    break;
+        int m = mat.length;
+        int n = mat[0].length;
+
+        int[] row = new int[m];
+        int[] col = new int[n];
+
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                if(mat[i][j] == 1){
+                    row[i]++;
+                    col[j]++;
                 }
             }
         }
-        return count;
-    }
-    boolean checkRow(int x, int y,int [][] mat){
-        for(int i = 0;i<mat.length;i++){
-            if(i == x) continue;
-            if(mat[i][y] == 1){
-                return false;
-            }
-        }
-        return true;
 
-    }
-    boolean checkColumn(int x, int y, int [][] mat){
-        for(int j = 0;j<mat[0].length;j++){
-            if(j == y) continue;
-            if(mat[x][j] == 1){
-                return false;
+        int count = 0;
+
+        for(int i = 0; i < m; i++){
+            for(int j = 0; j < n; j++){
+                if(mat[i][j] == 1 && row[i] == 1 && col[j] == 1){
+                    count++;
+                }
             }
         }
-        return true;
+
+        return count;
     }
 }
